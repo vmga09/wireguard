@@ -133,6 +133,7 @@ Crear archivo del cliente
 sudo nano /etc/wireguard/wg0.conf
 ```
 
+```
 [Interface]
 PrivateKey = <Clave privada cliente>
 Address = 10.0.0.2/32
@@ -140,14 +141,16 @@ DNS = 8.8.8.8
 
 [Peer]
 PublicKey = <Clave pública server>
-AllowedIPs = 0.0.0.0/0
+AllowedIPs = 0.0.0.0/0  
 Endpoint = IP_Server:51820
-
+```
 arrancar cliente vpn 
 
+```
 wg-quick up wg0
+```
 
-
+Si se quiere permitir el acceso de internet se debe modificar en el cliente la siguiente linea AllowedIPs a los segmentos solamente internos 
 
 
 
